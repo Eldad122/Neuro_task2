@@ -9,7 +9,7 @@ if __name__ == '__main__':
     data = np.vstack((data1, data2))
 
     som = SOM(10, 10)  # initialize a 10 by 10 SOM
-    som.fit(data, 10000, save_e=True, interval=100)  # fit the SOM for 10000 epochs, save the error every 100 steps
+    som.fit(data, 100, save_e=True, interval=100)  # fit the SOM for 10000 epochs, save the error every 100 steps
     som.plot_error_history(filename='images/som_error.png')  # plot the training error history
 
     targets = np.array(500 * [0] + 500 * [1])  # create some dummy target values
