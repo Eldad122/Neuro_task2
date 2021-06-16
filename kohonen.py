@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 def draw(w1, w2, iterate, radius, l_rate, is_line=True):
     fig, ax = plt.subplots()
     if is_line:
-        plt.plot(w1, w2, color='blue', marker='o', linestyle='dashed',
+        plt.plot(w1, w2, color='gray', marker='o', linestyle='dashed',
                  linewidth=2, markersize=12)
     else:
-        plt.plot(w1, w2, color='red', linestyle='None', marker='o', markersize=12)
+        plt.plot(w1, w2, color='cyan', linestyle='None', marker='o', markersize=12)
     ax.set(xlabel='X',
            ylabel='Y',
            title='Kohonen algorithm (Iter: {}, Radius: {:.3f}, L_rate:{:.3f})'
