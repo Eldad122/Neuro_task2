@@ -2,8 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import kohonen
 
+
 # First sample - Uniform Distribiotions
-if __name__ == '__main__':
+def sample1():
     x = np.random.uniform(-1000, 1000, 50)
     y = np.random.uniform(-1000, 1000, 50)
     step_max = 3000
@@ -37,7 +38,7 @@ def rand_non_uniform():
     return x, y
 
 
-if __name__ == '__main__':
+def sample2():
     x, y = rand_non_uniform()
     step_max = 2000
     radius = 200
@@ -55,10 +56,23 @@ def make_circle(s_range, e_range, amount=100):
     return x, y
 
 
-if __name__ == '__main__':
+def sample3():
     x, y = make_circle(500, 1000)
     step_max = 3000
     radius = 30
     alpha = 0.3
     kohonen.draw(x, y, 1, radius, alpha, False)
     x, y = kohonen.train(x, y, step_max, radius, alpha, is_line=False)
+
+
+if __name__ == '__main__':
+    print("1 - Uniform Distribiotions")
+    print("2 - Non Uniform Distribiotions When using many neurons")
+    print("3 - Fitting a circle of neurons")
+    chosen = input("Choose a sample: ")
+    if chosen == '1':
+        sample1()
+    elif chosen == '2':
+        sample2()
+    elif chosen == '3':
+        sample3()
