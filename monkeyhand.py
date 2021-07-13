@@ -79,7 +79,7 @@ def full_hand(SIZE, x_limit, y_limit, STEP):
     data = get_data(1, 13, 1000, STEP, x_up_y, y_up_x, x_left,
                     x_right)
 
-    map = som.som(data, 500, 0.5, 5, 6, 2, show_prog=True, desc="Neurons = 225 , 250 per Iter", limit=False)
+    map = som.som(data, 1000, 0.5, 5, 6, 2, show_prog=True, desc="Neurons = 225 , 250 per Iter", limit=False)
 
     plt.title("Neurons = 225 , 500 per Iter")
     plt.plot(x_limit, y_up_x, 'g')
@@ -131,7 +131,7 @@ def cut_finger(SIZE, x_limit, y_limit, STEP):
 
     data = get_data(1, 13, 1000, STEP, x_up_y, y_up_x, x_left, x_right)
 
-    map = som.som(data, 500, 0.5, 5, 6, 2, show_prog=True, desc="Neurons = 255 , 250 per Iter", limit=False)
+    map = som.som(data, 1000, 0.5, 5, 6, 2, show_prog=True, desc="Neurons = 255 , 250 per Iter", limit=False)
 
     plt.title("Neurons = 255 , 500 per Iter")
     plt.plot(x_limit, y_up_x, 'g')
