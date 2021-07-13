@@ -33,7 +33,7 @@ def get_data(down, up, size, steps, y_down, y_up, x_left, x_right):
 
 def full_hand(SIZE, x_limit, y_limit, STEP):
     som = SOM()
-
+    height = 4
     y_up_x = np.zeros(SIZE)
     x_up_y = np.zeros(SIZE)
     x_left = np.zeros(SIZE)
@@ -51,19 +51,19 @@ def full_hand(SIZE, x_limit, y_limit, STEP):
     y_up_x[0: STEP] = 7 * x - 2
 
     x = np.linspace(2, 3, STEP)
-    y_up_x[STEP: 2 * STEP] = 3
+    y_up_x[STEP: 2 * STEP] = height
 
     x = np.linspace(3, 4, STEP)
     y_up_x[2 * STEP: 3 * STEP] = 5 * x - 7
 
     x = np.linspace(4, 5, STEP)
-    y_up_x[3 * STEP: 4 * STEP] = 3
+    y_up_x[3 * STEP: 4 * STEP] = height
 
     x = np.linspace(5, 6, STEP)
     y_up_x[4 * STEP: 5 * STEP] = 4 * x - 12
 
     x = np.linspace(6, 7, STEP)
-    y_up_x[5 * STEP: 6 * STEP] = 3
+    y_up_x[5 * STEP: 6 * STEP] = height
 
     x = np.linspace(7, 8, STEP)
     y_up_x[6 * STEP: 7 * STEP] = 2 * x - 6
@@ -91,6 +91,7 @@ def full_hand(SIZE, x_limit, y_limit, STEP):
 
 def cut_finger(SIZE, x_limit, y_limit, STEP):
     som = SOM()
+    height = 4
     y_up_x = np.zeros(SIZE)
     x_up_y = np.zeros(SIZE)
     x_left = np.zeros(SIZE)
@@ -101,18 +102,25 @@ def cut_finger(SIZE, x_limit, y_limit, STEP):
     x_left = np.ones(SIZE)
     y = np.linspace(1, 5, SIZE)
     x_right = 9 * np.ones(SIZE)
+
     x = np.linspace(1, 2, STEP)
     y_up_x[0: STEP] = 7 * x - 2
+
     x = np.linspace(2, 3, STEP)
-    y_up_x[STEP: 2 * STEP] = -4 * x + 20
+    y_up_x[STEP: 2 * STEP] = height
+
     x = np.linspace(3, 5, 2 * STEP)
-    y_up_x[2 * STEP: 4 * STEP] = 8 * np.ones(2 * STEP)
+    y_up_x[2 * STEP: 4 * STEP] = height
+
     x = np.linspace(5, 6, STEP)
     y_up_x[4 * STEP: 5 * STEP] = 4 * x - 12
+
     x = np.linspace(6, 7, STEP)
-    y_up_x[5 * STEP: 6 * STEP] = -4 * x + 36
+    y_up_x[5 * STEP: 6 * STEP] = height
+
     x = np.linspace(7, 8, STEP)
     y_up_x[6 * STEP: 7 * STEP] = 2 * x - 6
+
     x = np.linspace(8, 9, SIZE - 7 * STEP)
     y_up_x[7 * STEP:] = -5 * x + 50
 
@@ -126,10 +134,10 @@ def cut_finger(SIZE, x_limit, y_limit, STEP):
     map = som.som(data, 500, 0.5, 5, 6, 2, show_prog=True, desc="Neurons = 255 , 250 per Iter", limit=False)
 
     plt.title("Neurons = 255 , 500 per Iter")
-    plt.plot(x_limit, y_up_x, 'r')
-    plt.plot(x_limit, x_up_y, 'r')
-    plt.plot(x_left, y_limit, 'r')
-    plt.plot(x_right, y_limit, 'r')
+    plt.plot(x_limit, y_up_x, 'g')
+    plt.plot(x_limit, x_up_y, 'g')
+    plt.plot(x_left, y_limit, 'g')
+    plt.plot(x_right, y_limit, 'g')
     som.plot_map(map, data)  # , x_plots = [x_left, x_right])
 
     plt.show()
