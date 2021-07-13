@@ -51,19 +51,19 @@ def full_hand(SIZE, x_limit, y_limit, STEP):
     y_up_x[0: STEP] = 7 * x - 2
 
     x = np.linspace(2, 3, STEP)
-    y_up_x[STEP: 2 * STEP] = -4 * x + 20
+    y_up_x[STEP: 2 * STEP] = 3
 
     x = np.linspace(3, 4, STEP)
     y_up_x[2 * STEP: 3 * STEP] = 5 * x - 7
 
     x = np.linspace(4, 5, STEP)
-    y_up_x[3 * STEP: 4 * STEP] = -5 * x + 33
+    y_up_x[3 * STEP: 4 * STEP] = 3
 
     x = np.linspace(5, 6, STEP)
     y_up_x[4 * STEP: 5 * STEP] = 4 * x - 12
 
     x = np.linspace(6, 7, STEP)
-    y_up_x[5 * STEP: 6 * STEP] = -4 * x + 36
+    y_up_x[5 * STEP: 6 * STEP] = 3
 
     x = np.linspace(7, 8, STEP)
     y_up_x[6 * STEP: 7 * STEP] = 2 * x - 6
